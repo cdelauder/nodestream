@@ -37,9 +37,8 @@ server.post('/info', function (req, res) {
 server.listen(3000)
 
 function changeFormData (data) {
-  console.log('in ' + data['string'])
   var b = data['string'].split('').reverse().join("")
-  console.log('out ' +b)
   return b
 }
+
 
