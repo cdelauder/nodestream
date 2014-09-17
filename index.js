@@ -14,14 +14,6 @@ server.get('/', function (req, res) {
 
 server.post('/info', function (req, res) {
   var info = 'a'
-  // var ws = new stream.Writeable()
-  // ws.on('data', function (data) {
-  //   console.log(data)
-  //   info = data
-  // })
-  // ws.on('end', function () {
-  //   res.render('form', {'info': info})
-  // })
   var rs = new stream.Readable({ objectMode: true });
   req.on('data', function (chunk) {
     var body = chunk.toString()
