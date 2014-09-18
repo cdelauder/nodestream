@@ -26,6 +26,10 @@ server.post('/info', function (req, res) {
   })
 })
 
+server.get('/client.js', function (req, res) {
+  res.sendfile(__dirname + 'client.js')
+})
+
 server.get('/pic', function (req, res) {
   callAPI()
   var html = ''
@@ -36,13 +40,14 @@ server.get('/pic', function (req, res) {
   }
   
   function end () {
-    res.render('form', {'pic':html})
+    res.write(html)
+    res.end()
   }
 
   function callAPI () {
-    var http = require('https')
+    var http = require('http')
     var body = ''
-    http.get('https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=cute%20puppy%20pictures', function (res) {
+    http.get('http://apod.nasa.gov/apod/astropix.html', function (res) {
       res.on('data', function (chunk) {
         body += chunk.toString()
       })
