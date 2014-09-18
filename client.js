@@ -1,7 +1,7 @@
 $(document).ready(bindListeners)
 
 function bindListeners () {
-  $(.pic).one('click', gethtml)
+  $('.pic').one('click', gethtml)
 }
 
 function gethtml (e) {
@@ -13,5 +13,5 @@ function gethtml (e) {
 }
 
 function addToPage (e) {
-  $(.div).append(e)
+  $('.div').append(e)
 }

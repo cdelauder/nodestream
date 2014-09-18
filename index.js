@@ -27,7 +27,7 @@ server.post('/info', function (req, res) {
 })
 
 server.get('/client.js', function (req, res) {
-  res.sendfile(__dirname + 'client.js')
+  res.sendFile(__dirname + '/client.js')
 })
 
 server.get('/pic', function (req, res) {
@@ -47,7 +47,7 @@ server.get('/pic', function (req, res) {
   function callAPI () {
     var http = require('http')
     var body = ''
-    http.get('http://apod.nasa.gov/apod/astropix.html', function (res) {
+    http.get('http://www.dailypuppy.com/', function (res) {
       res.on('data', function (chunk) {
         body += chunk.toString()
       })
